@@ -21,7 +21,7 @@ jobs:
 
     strategy:
       matrix:
-        java: [ '8', '11', '17' ]
+        java: [ '17' ]
     name: Java ${{ matrix.Java }} sample
     steps:
       - uses: actions/checkout@v3
@@ -42,3 +42,5 @@ jobs:
 
       - name: Submit Dependency Snapshot
         uses: advanced-security/maven-dependency-submission-action@v3
+        with:
+          token:  ${{ secrets.mytoken }}
