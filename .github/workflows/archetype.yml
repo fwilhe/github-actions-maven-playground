@@ -33,6 +33,7 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: |
+          cd ..
           mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=example-${{ matrix.archetype }} -DarchetypeArtifactId=${{ matrix.archetype }} -DinteractiveMode=false
           example-${{ matrix.archetype }}
           mvn verify
